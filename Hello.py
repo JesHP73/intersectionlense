@@ -20,17 +20,21 @@ def load_data():
 # Load data
 df = load_data()
 
-# Page configuration
-st.set_page_config(page_title="Intersectional Climate Trends", layout="wide")
+st.set_page_config(
+    page_title="Intersectional Climate Trends",
+    page_icon="🌎",
+)
 
-# Navigation
-st.sidebar.title("Navigation")
-page = st.sidebar.radio("Choose a Page", ["GNI vs AQI Analysis", "Trends Over Time", "Air Pollution Impact Analysis"])
+st.write("# Welcome to the Intersectional Climate Trends App 🌎")
 
-if page == "GNI vs AQI Analysis":
-    gni_aqi_analysis.show_page(df)
-elif page == "Trends Over Time":
-    trends_over_time.show_page(df)
-elif page == "Air Pollution Impact Analysis":
-    pollution_impact.show_page(df)
+st.sidebar.success("Select a page above.")
+
+st.markdown(
+    """
+    This app examines the intersection of climate data with socio-economic factors.
+    **👈 Select a page from the sidebar** to begin exploring the visualizations and insights.
+    ### Want to learn more?
+    - Check out [our GitHub repository](https://github.com/yourusername/your-repo-name)
+    """
+)
 
